@@ -1,0 +1,14 @@
+{
+  "name": "RS232PROJECT",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Procesamiento y binarización de imágenes a bajo nivel para Protocolos de Red",
+  "main": "src/encoder.js",
+  "scripts": {
+    "encode": "node src/encode-test.js",
+    "decode": "node src/decode-test.js"
+  },
+  "dependencies": {
+    "sharp": "^0.33.4"
+  }
+}

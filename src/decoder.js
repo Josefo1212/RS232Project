@@ -1,12 +1,12 @@
-import sharp from 'sharp';
-import { CONFIG } from './config.js';
+const sharp = require('sharp');
+const { CONFIG } = require('./config.js');
 
 /**
  * Reconstruye un archivo de imagen visible a partir del Buffer de bits crudos.
  * @param {Buffer} bitBuffer - El buffer de bits recuperado.
  * @param {string} outputPath - Destino del archivo PNG final en disco.
  */
-export async function bitBufferToImage(bitBuffer, outputPath) {
+const bitBufferToImage = async (bitBuffer, outputPath) => {
   const totalPixels = CONFIG.WIDTH * CONFIG.HEIGHT;
   const expandedGrayscaleBuffer = Buffer.alloc(totalPixels); 
 
@@ -31,4 +31,6 @@ export async function bitBufferToImage(bitBuffer, outputPath) {
   })
   .png()
   .toFile(outputPath);
-}
+};
+
+module.exports = { bitBufferToImage };

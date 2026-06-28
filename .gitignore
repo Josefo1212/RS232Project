@@ -1,0 +1,6 @@
+node_modules/
+output_image.bin
+arduino_output.bin
+arduino_output.png
+restored_output.png
+*.log

@@ -1,7 +1,7 @@
-import { bitBufferToImage } from './decoder.js';
-import fs from 'fs';
+const fs = require('fs');
+const { bitBufferToImage } = require('./decoder.js');
 
-async function testDecoding() {
+const testDecoding = async () => {
   try {
     const binInput = './output_image.bin';
     const imageOutput = './restored_output.png';
@@ -19,5 +19,5 @@ async function testDecoding() {
   } catch (err) {
     console.error("❌ Falla crítica en decodificación:", err);
   }
-}
+};
 testDecoding();

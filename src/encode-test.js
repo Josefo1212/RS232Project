@@ -1,7 +1,7 @@
-import { imageToBitBuffer } from './encoder.js';
-import fs from 'fs';
+const fs = require('fs');
+const { imageToBitBuffer } = require('./encoder.js');
 
-async function testEncoding() {
+const testEncoding = async () => {
   try {
     const inputFile = './input.png';
     const binOutputFile = './output_image.bin';
@@ -21,5 +21,5 @@ async function testEncoding() {
   } catch (err) {
     console.error("❌ Falla crítica en codificación:", err);
   }
-}
+};
 testEncoding();

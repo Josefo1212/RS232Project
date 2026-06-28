@@ -1,12 +1,12 @@
-import sharp from 'sharp';
-import { CONFIG } from './config.js';
+const sharp = require('sharp');
+const { CONFIG } = require('./config.js');
 
 /**
  * Transforma una imagen en un Buffer empaquetado a nivel de bits (Big-Endian).
  * @param {string} inputPath - Ruta del archivo de imagen de origen.
  * @returns {Promise<Buffer>} Buffer binario optimizado (128 bytes para 32x32).
  */
-export async function imageToBitBuffer(inputPath) {
+const imageToBitBuffer = async (inputPath) => {
   // 1. Redimensionar, pasar a escala de grises y extraer canales raw de 8-bits
   const rawGrayscalePixels = await sharp(inputPath)
     .resize(CONFIG.WIDTH, CONFIG.HEIGHT, { fit: 'fill' })
@@ -34,4 +34,6 @@ export async function imageToBitBuffer(inputPath) {
   }
 
   return bitBuffer;
-}
+};
+
+module.exports = { imageToBitBuffer };

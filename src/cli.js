@@ -17,7 +17,7 @@ const parseArgs = (argv) => {
   const args = {
     command: '',
     port: process.env.SERIAL_PORT || process.env.COM_PORT || '',
-    input: './input.png',
+    input: './logo.png',
     output: './arduino_output.png',
     binOutput: './arduino_output.bin',
     baudRate: 9600,

@@ -1,13 +1,11 @@
 {
   "name": "RS232PROJECT",
   "version": "1.0.0",
-  "type": "commonjs",
+  "type": "module",
   "description": "Procesamiento y binarización de imágenes a bajo nivel para Protocolos de Red",
-  "main": "src/encoder.js",
+  "main": "src/cli.js",
   "scripts": {
-    "encode": "node src/encode-test.js",
-    "decode": "node src/decode-test.js",
-    "serial": "node src/serial-controller.js"
+    "serial": "node src/cli.js"
   },
   "dependencies": {
     "serialport": "^12.0.0",
